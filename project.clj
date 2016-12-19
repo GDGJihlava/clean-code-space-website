@@ -25,8 +25,7 @@
               :builds [{:id           "devcards"
                         :source-paths ["src"]
                         :figwheel     {:devcards            true
-                                       :load-warninged-code true
-                                       :server-port 5000}
+                                       :load-warninged-code true}
                         :compiler     {:main                 "web.devcards"
                                        :asset-path           "js/compiled/devcards_out"
                                        :output-to            "resources/public/js/compiled/web_devcards.js"
@@ -48,5 +47,9 @@
                        ;;                                    :optimizations :advanced}}
                        ]}
 
-  :figwheel {:css-dirs ["resources/public/css"]})
+  :figwheel {:css-dirs    ["resources/public/css"]
+             :server-port 5000}
+  :aliases {"devel"    ["figwheel" "devel"]
+            "devcards" ["figwheel" "devcards"]
+            })
 
